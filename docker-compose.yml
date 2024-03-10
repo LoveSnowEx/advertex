@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  backend:
+    build:
+      context: docker
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/go/src/app
+    working_dir: /go/src/app
+    command: ["gf", "run", "main.go"]
