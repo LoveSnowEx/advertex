@@ -2,14 +2,15 @@
 // Code generated and maintained by GoFrame CLI tool. DO NOT EDIT.
 // =================================================================================
 
-package hello
+package ad
 
 import (
 	"context"
 
-	"advertex/api/hello/v1"
+	"advertex/api/ad/v1"
 )
 
-type IHelloV1 interface {
-	Hello(ctx context.Context, req *v1.HelloReq) (res *v1.HelloRes, err error)
+type IAdV1 interface {
+	GetAd(ctx context.Context, req *v1.GetAdReq) (res *v1.GetAdRes, err error)
+	CreateAd(ctx context.Context, req *v1.CreateAdReq) (res *v1.CreateAdRes, err error)
 }
