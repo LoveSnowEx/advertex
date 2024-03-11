@@ -5,17 +5,17 @@ import (
 )
 
 type GetAdReq struct {
-	g.Meta `path:"/ad" tags:"Ad" method:"get" summary:"Get ad list"`
+	g.Meta `path:"/ad" tags:"Ad" method:"get" sm:"Get ad list"`
 }
 
 type GetAdRes struct {
-	g.Meta `mime:"application/json"`
+	g.Meta
 }
 
 type CreateAdReq struct {
-	g.Meta `path:"/ad" tags:"Ad" method:"post" summary:"Create ad"`
+	g.Meta `path:"/ad" tags:"Ad" method:"post" sm:"Create ad"`
 }
 
 type CreateAdRes struct {
-	g.Meta `mime:"application/json"`
+	g.Meta
 }
