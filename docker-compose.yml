@@ -3,7 +3,8 @@ version: "3"
 services:
   backend:
     build:
-      context: docker
+      context: .
+      dockerfile: manifest/docker/develop.Dockerfile
     ports:
       - 8000:8000
     volumes:
