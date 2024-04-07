@@ -28,13 +28,24 @@ type Conditons struct {
 	Platform Platform `json:"platform" dc:"平台：0:android; 1:ios; 2:web"`
 }
 
+type Ad struct {
+	Title string    `json:"title" dc:"廣告標題"`
+	EndAt time.Time `json:"end_at" dc:"結束時間" example:"2024-12-31T16:00:00.000Z"`
+}
+
 type GetAdReq struct {
-	g.Meta `path:"/ad" tags:"Ad" method:"get" sm:"Get ad list"`
+	g.Meta   `path:"/ad" tags:"Ad" method:"get" sm:"Get ad list"`
+	Offset   int      `json:"offset" dc:"偏移量" d:"0" example:"0"`
+	Limit    int      `json:"limit" dc:"數量" d:"5" example:"5"`
+	Age      int      `json:"age" dc:"年齡" example:"18"`
+	Gender   Gender   `json:"gender" dc:"性別" example:"0"`
+	Country  string   `json:"country" dc:"國家" example:"TW"`
+	Platform Platform `json:"platform" dc:"平台" example:"0"`
 }
 
 type GetAdRes struct {
 	g.Meta
-	Data string
+	Items []Ad `json:"items" dc:"符合條件的活躍廣告"`
 }
 
 type CreateAdReq struct {
